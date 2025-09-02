@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chronoscent — Perfumes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="perfumes-page">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?q=80&w=1600&auto=format&fit=crop');opacity:.9"></div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><span class="logo-dot" aria-hidden="true"></span><span>Chronoscent</span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <span class="dropdown-toggle" tabindex="0">Perfumes ▾</span>
+          <div class="dropdown-content">
+            <a href="perfumes-men.html">Perfumes — Men</a>
+            <a href="perfumes-women.html">Perfumes — Women</a>
+          </div>
+        </div>
+        <a href="skincare.html">Skincare</a>
+        <a href="watches.html">Watches</a>
+        <a href="contact.html" class="btn btn-ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section style="padding:4rem 0 2rem">
+      <div class="kicker">Perfumes</div>
+      <h1 style="margin:0 0 .5rem">Perfume Collections — Men & Women</h1>
+      <p style="color:var(--muted);max-width:64ch">Explore our curated selection. Hover on "Perfumes" in the navbar to jump to men or women fragrances, or use the links below.</p>
+
+      <div style="display:flex;gap:1rem;margin-top:1.25rem;flex-wrap:wrap">
+        <a class="card" href="perfumes-men.html" style="padding:1.2rem;display:block;min-width:220px">
+          <strong>Men</strong><div style="color:var(--muted)">Bold, woody & fresh</div>
+        </a>
+        <a class="card" href="perfumes-women.html" style="padding:1.2rem;display:block;min-width:220px">
+          <strong>Women</strong><div style="color:var(--muted)">Floral, amber & soft</div>
+        </a>
+      </div>
+
+      <div style="margin-top:2rem" class="product-grid">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1523297730650-594bc63f9d6a?q=80&w=1200&auto=format&fit=crop" alt="">
+          <div style="padding-top:.6rem"><strong>Cedar Mist</strong><div style="color:var(--muted)">$49</div></div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop" alt="">
+          <div style="padding-top:.6rem"><strong>Amber No.5</strong><div style="color:var(--muted)">$59</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container">© <span id="year2"></span> Chronoscent</div></footer>
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+  

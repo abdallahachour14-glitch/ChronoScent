@@ -1,0 +1,191 @@
+:root{
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --transition: 300ms cubic-bezier(.2,.9,.3,1);
+  --glass: rgba(255,255,255,0.06);
+  --muted: #8b8f95;
+  --card-radius: 14px;
+}
+
+/* PAGE THEMES (base values; overridden per body class) */
+body { margin:0; font-family:var(--font-sans); color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; transition:background var(--transition), color var(--transition);}
+a{color:inherit;text-decoration:none}
+.container{max-width:1140px;margin:0 auto;padding:1rem}
+
+/* NAV */
+.site-header{position:sticky;top:0;z-index:60;backdrop-filter: blur(6px) saturate(120%);border-bottom:1px solid rgba(0,0,0,.06);}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.05rem}
+.brand .logo-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block;box-shadow:0 2px 10px rgba(0,0,0,0.12)}
+.nav-links{display:flex;gap:.6rem;align-items:center}
+.nav-links > a, .nav-links > .dropdown-toggle {padding:.5rem .75rem;border-radius:12px;display:inline-block}
+.nav-links > a:hover, .nav-links > .dropdown-toggle:hover {background:rgba(255,255,255,0.04); transform:translateY(-2px); transition:var(--transition);}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button (Perfumes) */
+.dropbtn {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 160px;
+  z-index: 1000;
+  top: 100%; /* make sure it appears just below */
+  left: 0;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #444;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Mobile first */
+body {
+  font-size: 16px;
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+.page-hero-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* full screen height */
+  overflow: hidden;
+}
+
+.page-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* acts like background-size: cover */
+  filter: contrast(.85); /* same filter you had */
+}
+
+
+
+/* HERO */
+.hero{
+  padding:6rem 0; display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center;position:relative;overflow:hidden;
+}
+.hero .hero-left{max-width:58ch;animation:fadeUp .7s ease both .15s}
+.hero h1{font-size:clamp(28px,4.5vw,48px);margin:0 0 .5rem;letter-spacing:.2px}
+.kicker{display:inline-block;padding:.25rem .6rem;border-radius:999px;font-weight:700;margin-bottom:.9rem;background:var(--accent-bg);color:var(--accent);font-size:.8rem}
+.hero p{margin:0 0 1.25rem;color:var(--muted)}
+.cta-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.65rem 1rem;border-radius:999px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:var(--transition)}
+.btn-primary{background:var(--accent);color:var(--accent-contrast);box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--text)}
+
+/* HERO RIGHT card */
+.hero-card{border-radius:18px;padding:1rem;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));backdrop-filter:blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.12);animation:fadeUp .7s both .25s}
+.cards {display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.product-tile{border-radius:12px;overflow:hidden;background:var(--card-bg);border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform var(--transition), box-shadow var(--transition)}
+.product-tile img{width:100%;height:120px;object-fit:cover;display:block}
+.product-tile .meta{padding:.7rem}
+
+/* GRID + CARDS */
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card-bg);border-radius:14px;padding:1rem;border:1px solid rgba(0,0,0,0.04);transition:transform var(--transition), box-shadow var(--transition);overflow:hidden}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.12)}
+
+/* PRODUCTS */
+.product-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+.product-card{width:220px;background:var(--card-bg);border-radius:12px;padding:1rem;border:1px solid rgba(0,0,0,0.04);transition:transform var(--transition);overflow:hidden}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 14px 32px rgba(2,6,23,0.10)}
+.product-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+/* FOOTER */
+.site-footer{padding:2rem 0;border-top:1px solid rgba(0,0,0,0.04);margin-top:3rem;color:var(--muted);text-align:center}
+
+/* Contact form */
+.form{max-width:720px;margin:1rem auto;background:var(--card-bg);padding:1rem;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+.form .row{display:flex;gap:1rem}
+.form input[type=text], .form input[type=email], .form textarea{width:100%;padding:.7rem;border-radius:8px;border:1px solid rgba(0,0,0,0.08);font-size:1rem}
+.form textarea{min-height:140px;resize:vertical}
+.form .submit{margin-top:.8rem}
+
+/* IMAGE overlays & parallax hints */
+.page-hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;z-index:-1;transform:scale(1.07);filter:contrast(.9) saturate(.88);transition:transform 9s linear}
+
+/* small screens */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr; padding:3.5rem 0}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .product-card, .product-tile img{height:140px}
+}
+@media (max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .nav-links{display:flex;gap:.4rem}
+}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+/* ---------- PAGE THEME VARIABLES ---------- */
+/* Home: black/gold */
+.home-page{--bg: linear-gradient(180deg,#070707 0%, #1b1b1b 100%);--text:#fff;--muted:#cfc9c3;--accent:#d4af37;--accent-contrast:#111;--accent-bg:rgba(212,175,55,0.08);--sheet:rgba(255,255,255,0.03);--card-bg:rgba(255,255,255,0.03)}
+/* Perfumes -> general: purple */
+.perfumes-page{--bg: linear-gradient(180deg,#2a0036 0%, #160016 100%);--text:#fff;--muted:#e6dbe9;--accent:#a16ab0;--accent-contrast:#fff;--accent-bg:rgba(161,106,176,0.08);--sheet:rgba(255,255,255,0.03);--card-bg:rgba(255,255,255,0.02)}
+/* Men perfumes: dark blue */
+.men-perfume-page{--bg: linear-gradient(180deg,#00162f 0%, #031024 100%);--text:#fff;--muted:#cbd7e1;--accent:#2ea3ff;--accent-contrast:#031024;--accent-bg:rgba(46,163,255,0.08);--sheet:rgba(255,255,255,0.02);--card-bg:rgba(255,255,255,0.02)}
+/* Women perfumes: rose/pink */
+.women-perfume-page{--bg: linear-gradient(180deg,#ffeef6 0%, #ffdfe9 100%);--text:#221;--muted:#6a585f;--accent:#d17a9a;--accent-contrast:#fff;--accent-bg:rgba(209,122,154,0.08);--sheet:#fff;--card-bg:#fff}
+/* Skincare: fresh green */
+.skincare-page{--bg: linear-gradient(180deg,#dfd89c 0%, #ffd000 100%);--text:#050f0d;--muted:#000000;--accent:#5866e0;--accent-contrast:#fff;--accent-bg:rgba(114, 12, 12, 0.08);--sheet:#fff;--card-bg:#fff}
+/* Watches: silver / grey */
+.watches-page{--bg: linear-gradient(180deg,#f4f6f8 0%, #e9edf1 100%);--text:#0d1620;--muted:#54606a;--accent:#9ea7b1;--accent-contrast:#111;--accent-bg:rgba(158,167,177,0.06);--sheet:rgba(255,255,255,0.96);--card-bg:#fff}
+
+/* nice little focus outlines for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {outline:2px solid rgba(0,0,0,0.06);outline-offset:2px}

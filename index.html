@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chronoscent - Where Time Meets Elegance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+<div class="page-hero-bg">
+  <img src="pack.jpeg" alt="Hero Image">
+</div>
+
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><span class="logo-dot" aria-hidden="true"></span><span>Chronoscent</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <span class="dropdown-toggle" tabindex="0">Perfumes ▾</span>
+          <div class="dropdown-content" role="menu" aria-label="Perfume categories">
+            <a href="perfumes-men.html">Perfumes — Men</a>
+            <a href="perfumes-women.html">Perfumes — Women</a>
+          </div>
+        </div>
+        <a href="skincare.html">Skincare</a>
+        <a href="watches.html">Watches</a>
+        <a href="contact.html" class="btn btn-ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Chronoscent — Curated & Modest</div>
+        <h1>Chronoscent — Where Time Meets Elegance</h1>
+        <p style="display: flexboxc; color: rgb(214, 214, 214); font-size: 18px;">We craft a simple yet refined selection of perfumes, skincare and watches made for everyday elegance.
+           Discover curated scents, gentle skincare, and timepieces that match your life.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="perfumes.html">Shop Perfumes</a>
+          <a class="btn btn-ghost" href="watches.html">View Watches</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-weight:800">Bestsellers</div>
+          <div style="font-size:.9rem;color:var(--muted)">Curated picks</div>
+        </div>
+
+        <div class="cards" style="margin-top:1rem">
+          <div class="product-tile">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop" alt="">
+            <div class="meta"><strong>Amber No.5</strong><div style="color:var(--muted);font-size:.92rem">$59</div></div>
+          </div>
+          <div class="product-tile">
+            <img src="sa3a.jpeg" alt="">
+            <div class="meta"><strong>Hydra Calm</strong><div style="color:var(--muted);font-size:.92rem">$24</div></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:2.4rem">
+      <h2 style="color:var(--text)">Collections</h2>
+      <p style="color:var(--muted);max-width:68ch">Three focused collections — perfumes split for men and women, gentle skincare, and everyday watches.</p>
+
+      <div class="grid" style="margin-top:1rem">
+        <a class="card" href="perfumes.html" style="display:block">
+          <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop" alt="" style="width:100%;height:160px;object-fit:cover;border-radius:10px">
+          <div style="padding-top:.7rem"><strong>Perfumes</strong><div style="color:var(--muted)">Scents for every mood</div></div>
+        </a>
+
+        <a class="card" href="skincare.html" style="display:block">
+          <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=1200&auto=format&fit=crop" alt="" style="width:100%;height:160px;object-fit:cover;border-radius:10px">
+          <div style="padding-top:.7rem"><strong>Skincare</strong><div style="color:var(--muted)">Gentle & effective</div></div>
+        </a>
+
+        <a class="card" href="watches.html" style="display:block">
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop" alt="" style="width:100%;height:160px;object-fit:cover;border-radius:10px">
+          <div style="padding-top:.7rem"><strong>Watches</strong><div style="color:var(--muted)">Timeless & modest</div></div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display:flex;gap:1rem;align-items:center;justify-content:center;margin-bottom:.6rem">
+        <span class="logo-dot" style="width:8px;height:8px"></span><strong>Chronoscent</strong>
+      </div>
+      <div style="color:var(--muted)">© <span id="year"></span> Chronoscent — All rights reserved</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  
+</body>
+</html>

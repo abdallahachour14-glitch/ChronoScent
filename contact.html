@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Chronoscent</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page"> <!-- use home theme for a clean contact look -->
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1526378723518-4f10a05d92c7?q=80&w=1600&auto=format&fit=crop');opacity:.85"></div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><span class="logo-dot"></span><span>Chronoscent</span></a>
+      <nav class="nav-links"><a href="index.html">Home</a><div class="dropdown"><span class="dropdown-toggle">Perfumes ▾</span>
+        <div class="dropdown-content"><a href="perfumes-men.html">Men</a><a href="perfumes-women.html">Women</a></div></div><a href="skincare.html">Skincare</a><a href="watches.html">Watches</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section style="padding:3.2rem 0">
+      <div class="kicker">Contact</div>
+      <h1>Get in touch</h1>
+      <p style="color:var(--muted);max-width:64ch">Questions, wholesale inquiries, or custom requests — send us a message and we'll reply soon.</p>
+
+      <form class="form" id="contactForm" onsubmit="return handleSubmit(event)">
+        <div class="row" style="margin-bottom:.6rem">
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="email" id="email" placeholder="Email address" required>
+        </div>
+        <div style="margin-bottom:.6rem">
+          <input type="text" id="subject" placeholder="Subject (optional)">
+        </div>
+        <div>
+          <textarea id="message" placeholder="Your message" required></textarea>
+        </div>
+        <div class="submit">
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <a href="mailto:hello@chronoscent.co" style="margin-left:1rem;color:var(--muted);font-weight:600">Or email: hello@chronoscent.co</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container">© <span id="year7"></span> Chronoscent</div></footer>
+
+  <script>
+    document.getElementById('year7').textContent = new Date().getFullYear();
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){
+        alert('Please complete the required fields.');
+        return false;
+      }
+      // simple success UI — replace with real send backend later
+      alert('Thanks '+ name +'. Your message was prepared to send. (This demo uses a local form — integrate with email service to actually send.)');
+      document.getElementById('contactForm').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
